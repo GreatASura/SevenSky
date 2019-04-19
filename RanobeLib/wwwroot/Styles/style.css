@@ -1,0 +1,86 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.content{
+    background-color:antiquewhite;
+    text-align:center;
+}
+body {
+   
+    
+    
+}
+.bookStore
+{
+  
+    background-color:forestgreen;
+}
+.bookContainer {
+    width:48%;
+    height: 300px;
+    background-color:aqua;
+    float:left;
+    margin:1%;
+}
+.bookImageBlock {
+    height: 100%;
+    width: 50%;
+    float: left;
+    background-color: black;
+    overflow: hidden;
+   
+}
+.bookImage
+{
+    height:98%;
+    width:auto;
+    margin:1%;
+}
+.bookText{
+    height:90%
+}
+.bookTextBlock {
+    text-align:left;
+    padding:20px;
+    float:left;
+    height:100%;
+    width:50%;
+}
+.readButton{
+    text-align:center;
+    background-color:blueviolet;
+    color:white;
+    height:10%;
+     
+}
+.header-text {
+    height: 60px;
+    text-align: center;
+    padding-top: 5px;
+}
+.header {
+    text-align: center;
+    align-content: center;
+    background-color: antiquewhite;
+    color: black;
+    height: auto;
+}
+.headerCartoon {
+    
+  
+    width:100%;
+    display: block;
+    height: 200px;
+}
+.footer {
+    
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    height: 80px;
+    
+}

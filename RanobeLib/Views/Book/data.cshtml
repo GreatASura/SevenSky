@@ -1,0 +1,37 @@
+﻿@using RanobeLib.Models;
+@{
+
+    Layout = "_Layout";
+
+}
+@{
+    string getPath(Book book)
+    {
+        return book.Id + ".jpeg";
+    }
+}
+
+<h1> Last Releases</h1>
+<div class="bookStore">
+    @foreach (Book book in ViewBag.Books)
+    {
+    <div class="bookContainer">
+        <div class="bookImageBlock">
+            <img src="~/Images/Books/@getPath(book)" class="bookImage"/>
+        </div>
+        <div class=" bookTextBlock">
+            <div class="bookText">
+                <p>Назва книги: @book.Name</p>
+                <p>Автор: @book.Author</p>
+                <p>Опис: @book.Discription</p>
+            </div>
+            
+            <div onclick="location.href='https://localhost:44387/Book/info?Id=@book.Id'" style="cursor: pointer;" class=" readButton" >
+                <p>Press</p>
+            </div>
+        </div>
+
+    </div>
+    }
+</div>
+

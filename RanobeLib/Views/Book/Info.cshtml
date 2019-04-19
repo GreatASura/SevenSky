@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+@{
+    string getPath()
+    {
+        return ViewBag.Book.Id + ".jpeg";
+    }
+}
+
+
+    <div class="container pt-3 pb-4">
+        <div class="row">
+            <div class="col-12 col-md-5 col-lg-4 d-flex flex-column pt-3">
+                <img src="~/Images/Books/@getPath()" alt="book (here must be the name of book)" class="w-100">
+                <div class="book_desc">
+                    <div class="h4">Author name</div>
+                    <div class="h5 text-secondary">@ViewBag.Book.Author</div>
+                    <div class="h4">Genre</div>
+                    <div class="h5 text-secondary">lorem</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 col-lg-8 d-flex flex-column pt-3">
+                <h1>@ViewBag.Book.Name</h1>
+
+                <div class="h2">Description</div>
+                <div class=" discriprionText">
+                    @ViewBag.Book.Discription
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="chaptersBlock">
+            <p>Chaper count: @ViewBag.Book.Chapters.Count</p>
+            @foreach (var item in ViewBag.Book.Chapters)
+            {
+                <div class="chapter">
+                    <p>@item.ChapterNumber</p>
+                    <p>@item.Title</p>
+                    <p>@item.DatePublish</p>
+                    <p><a href="~/Book/Chapter?bookid=@ViewBag.Book.Id&chapterId=@item.ChapterNumber">Press</a></p>
+                </div>
+            }
+
+        </div>
+    </div>
+
+
+

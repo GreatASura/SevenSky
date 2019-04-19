@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+@{ 
+    int next()
+    {
+        if (ViewBag.Chapter.Id == -1)
+        {
+            if (ViewBag.Chapter.ChapterNumber > 1)
+                return (int)ViewBag.Chapter.ChapterNumber;
+            else
+                return ((int)ViewBag.Chapter.ChapterNumber) + 1;
+        }
+        else
+            return ((int)ViewBag.Chapter.ChapterNumber) + 1;
+
+    }
+    int prev()
+    {
+        if (ViewBag.Chapter.Id == -1)
+        {
+            if (ViewBag.Chapter.ChapterNumber < 1)
+                return (int)ViewBag.Chapter.ChapterNumber;
+            else
+                return ((int)ViewBag.Chapter.ChapterNumber) - 1;
+        }
+        else
+            return ((int)ViewBag.Chapter.ChapterNumber) - 1;
+
+    }
+}
+<div class="chapter">
+    <h2 class="chapter_name">@ViewBag.Chapter.Title</h2>
+    <div class=" chapter_text">
+        @ViewBag.Chapter.Text;
+    </div>
+    <div>
+        <div  class=" chapterButtons" onclick="location.href='https://localhost:44387//Book/Chapter?bookId=@ViewBag.Chapter.BookId&chapterId=@prev()' " style="cursor: pointer;"><p>Previous</p></div>
+        <div  class=" chapterButtons" onclick="location.href='https://localhost:44387/Book/info?Id=@ViewBag.Chapter.BookId'" style="cursor: pointer;"><p>Book</p></div>
+        <div  class=" chapterButtons" onclick="location.href='https://localhost:44387//Book/Chapter?bookId=@ViewBag.Chapter.BookId&chapterId=@next()'" style="cursor: pointer;"><p>Next</p></div>
+    </div>
+</div>
